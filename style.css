@@ -1,0 +1,135 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5f9;
+  color: #1f2937;
+}
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #dbe1ea;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #d9dee8;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+}
+
+.card .label {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card .value {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.warning { color: #d97706; }
+.success { color: #059669; }
+
+.panel {
+  background: #fff;
+  border: 1px solid #d9dee8;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 34px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.filters input,
+.filters select {
+  padding: 12px 14px;
+  border: 1px solid #cfd7e3;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.note {
+  margin-bottom: 12px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f8fafc;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.badge.active { background: #059669; }
+.badge.inactive { background: #2563eb; }
+
+@media (max-width: 900px) {
+  .cards { grid-template-columns: 1fr; }
+  .filters { grid-template-columns: 1fr; }
+}
