@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grey List Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>ប្រព័ន្ធ បញ្ជីត្រួតពិនិត្យ</h1>
+    <div class="actions">
+      <label class="upload-btn">
+        Upload Excel
+        <input type="file" id="excelFile" accept=".xlsx,.xls" hidden />
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <div class="card">
+        <div class="label">ទិន្នន័យសរុប</div>
+        <div class="value" id="totalCount">0</div>
+      </div>
+      <div class="card">
+        <div class="label">សកម្ម</div>
+        <div class="value warning" id="activeCount">0</div>
+      </div>
+      <div class="card">
+        <div class="label">មិនសកម្ម</div>
+        <div class="value success" id="inactiveCount">0</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>បញ្ជីឈ្មោះ</h2>
+
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder="ស្វែងរក..." />
+        <select id="statusFilter">
+          <option value="">ស្ថានភាពទាំងអស់</option>
+          <option value="សកម្ម">សកម្ម</option>
+          <option value="មិនសកម្ម">មិនសកម្ម</option>
+        </select>
+      </div>
+
+      <div class="note" id="sourceNote">ប្រភពទិន្នន័យ: data/data.json</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Country</th>
+              <th>Program</th>
+              <th>Reason</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
